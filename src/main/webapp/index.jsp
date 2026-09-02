@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VibeMart · Premium E‑Commerce</title>
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starbucks · Premium Coffee</title>
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    /* ----- reset & base ----- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: #faf7f4;
-      color: #1a1614;
+      background: #f5f0eb;
+      color: #1e1a16;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
     }
+
     :root {
-      --bg: #faf7f4;
+      --bg: #f5f0eb;
       --card: #ffffff;
-      --primary: #1a1614;
-      --accent: #e85d4a;
-      --accent-light: #fce9e5;
-      --accent-dark: #c94a38;
+      --primary: #1e1a16;
+      --green: #006241;
+      --green-light: #d4e9e0;
+      --green-dark: #004e33;
+      --accent: #d4a373;
+      --accent-light: #f4e6d8;
       --muted: #7a6e67;
-      --surface: #f0ebe7;
+      --surface: #ede7e1;
       --shadow-sm: 0 4px 12px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
       --shadow-md: 0 12px 32px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.02);
       --shadow-lg: 0 24px 56px rgba(0,0,0,0.06), 0 8px 20px rgba(0,0,0,0.02);
@@ -37,18 +44,22 @@
       --transition: 0.2s cubic-bezier(0.2, 0, 0, 1);
     }
 
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-    /* ----- header ----- */
+    /* ----- header (Starbucks style) ----- */
     header {
-      background: rgba(255, 252, 249, 0.82);
+      background: rgba(255, 252, 249, 0.88);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(26, 22, 20, 0.04);
+      border-bottom: 1px solid rgba(0, 98, 65, 0.08);
       position: sticky;
       top: 0;
       z-index: 60;
-      transition: var(--transition);
     }
+
     .header-inner {
       display: flex;
       align-items: center;
@@ -57,6 +68,7 @@
       padding: 14px 0;
       flex-wrap: wrap;
     }
+
     .brand {
       display: flex;
       align-items: center;
@@ -65,10 +77,18 @@
       font-weight: 700;
       font-size: 26px;
       letter-spacing: -0.02em;
-      color: var(--primary);
+      color: var(--green);
     }
-    .brand i { color: var(--accent); font-size: 28px; }
-    .brand span { background: linear-gradient(145deg, #1a1614, #4f403a); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .brand i {
+      font-size: 28px;
+      color: var(--green);
+    }
+    .brand span {
+      background: linear-gradient(145deg, #006241, #004e33);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
 
     .main-nav ul {
       display: flex;
@@ -87,9 +107,10 @@
       transition: var(--transition);
       font-size: 0.95rem;
     }
-    .main-nav a:hover, .main-nav a:focus-visible {
-      background: var(--accent-light);
-      color: var(--accent-dark);
+    .main-nav a:hover,
+    .main-nav a:focus-visible {
+      background: var(--green-light);
+      color: var(--green-dark);
     }
 
     .search-wrap {
@@ -99,13 +120,13 @@
       border-radius: 60px;
       padding: 4px 4px 4px 20px;
       box-shadow: var(--shadow-sm);
-      border: 1px solid rgba(26,22,20,0.04);
+      border: 1px solid rgba(0, 98, 65, 0.06);
       transition: var(--transition);
       min-width: 200px;
     }
     .search-wrap:focus-within {
-      border-color: var(--accent);
-      box-shadow: 0 4px 16px rgba(232, 93, 74, 0.08);
+      border-color: var(--green);
+      box-shadow: 0 4px 16px rgba(0, 98, 65, 0.08);
     }
     .search-wrap input {
       border: 0;
@@ -117,7 +138,7 @@
       color: var(--primary);
     }
     .search-wrap button {
-      background: var(--accent);
+      background: var(--green);
       border: 0;
       color: white;
       width: 42px;
@@ -127,7 +148,10 @@
       transition: var(--transition);
       font-size: 16px;
     }
-    .search-wrap button:hover { background: var(--accent-dark); transform: scale(0.96); }
+    .search-wrap button:hover {
+      background: var(--green-dark);
+      transform: scale(0.96);
+    }
 
     .header-actions {
       display: flex;
@@ -144,10 +168,13 @@
       transition: var(--transition);
       cursor: pointer;
     }
-    .icon-btn:hover { background: var(--accent-light); color: var(--accent-dark); }
+    .icon-btn:hover {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
 
     .cart {
-      background: var(--primary);
+      background: var(--green);
       color: white;
       padding: 10px 20px 10px 18px;
       border-radius: 60px;
@@ -159,11 +186,16 @@
       border: 0;
       cursor: pointer;
     }
-    .cart:hover { background: var(--accent-dark); transform: translateY(-2px); }
-    .cart i { font-size: 18px; }
+    .cart:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+    .cart i {
+      font-size: 18px;
+    }
     .cart-count {
       background: var(--accent);
-      color: white;
+      color: #1e1a16;
       font-weight: 700;
       font-size: 13px;
       width: 24px;
@@ -184,7 +216,7 @@
     }
     #mobileMenu {
       background: white;
-      border-top: 1px solid rgba(26,22,20,0.04);
+      border-top: 1px solid rgba(0, 98, 65, 0.06);
       padding: 16px 0;
       display: none;
     }
@@ -204,11 +236,14 @@
       color: var(--primary);
       transition: var(--transition);
     }
-    #mobileMenu a:hover { background: var(--accent-light); color: var(--accent-dark); }
+    #mobileMenu a:hover {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
 
-    /* ----- hero ----- */
+    /* ----- hero (Starbucks vibe) ----- */
     .hero {
-      background: linear-gradient(135deg, #1e1815 0%, #352b26 100%);
+      background: linear-gradient(135deg, #1e3a2f 0%, #0f2b21 100%);
       color: white;
       border-radius: 0 0 var(--radius) var(--radius);
       padding: 72px 24px;
@@ -223,11 +258,15 @@
       bottom: -80px;
       width: 480px;
       height: 480px;
-      background: radial-gradient(circle, rgba(232,93,74,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(212, 163, 115, 0.12) 0%, transparent 70%);
       border-radius: 50%;
       pointer-events: none;
     }
-    .hero-content { position: relative; z-index: 2; max-width: 680px; }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
     .hero h1 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: clamp(2.4rem, 6vw, 4rem);
@@ -235,14 +274,20 @@
       line-height: 1.1;
       margin-bottom: 14px;
     }
-    .hero h1 i { color: var(--accent); }
+    .hero h1 i {
+      color: var(--accent);
+    }
     .hero p {
       font-size: 1.15rem;
       opacity: 0.8;
       margin-bottom: 32px;
       max-width: 500px;
     }
-    .btn-group { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
     .btn {
       display: inline-flex;
       align-items: center;
@@ -257,24 +302,29 @@
     }
     .btn-primary {
       background: var(--accent);
-      color: #1a1614;
+      color: #1e1a16;
     }
     .btn-primary:hover {
-      background: var(--accent-dark);
+      background: #c28f5c;
       color: white;
       transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(232, 93, 74, 0.25);
+      box-shadow: 0 12px 28px rgba(212, 163, 115, 0.25);
     }
     .btn-ghost {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       color: white;
     }
-    .btn-ghost:hover { background: rgba(255,255,255,0.14); transform: translateY(-3px); }
+    .btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.14);
+      transform: translateY(-3px);
+    }
 
     /* ----- sections ----- */
-    .section { padding: 48px 0; }
+    .section {
+      padding: 48px 0;
+    }
     .section-header {
       display: flex;
       align-items: baseline;
@@ -287,13 +337,22 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
       letter-spacing: -0.02em;
+      color: var(--green);
     }
-    .section-header .muted { color: var(--muted); font-size: 0.95rem; }
+    .section-header .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    .grid { display: grid; gap: 24px; }
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
 
-    /* categories */
-    .categories-grid { grid-template-columns: repeat(6, 1fr); }
+    /* categories (coffee themed) */
+    .categories-grid {
+      grid-template-columns: repeat(6, 1fr);
+    }
     .cat-card {
       background: white;
       border-radius: var(--radius);
@@ -301,21 +360,33 @@
       text-align: center;
       box-shadow: var(--shadow-sm);
       transition: var(--transition);
-      border: 1px solid rgba(26,22,20,0.02);
+      border: 1px solid rgba(0, 98, 65, 0.04);
       cursor: pointer;
     }
     .cat-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-md);
-      background: var(--accent-light);
-      border-color: var(--accent);
+      background: var(--green-light);
+      border-color: var(--green);
     }
-    .cat-card .icon { font-size: 36px; color: var(--accent); margin-bottom: 6px; }
-    .cat-card h4 { font-weight: 600; font-size: 1rem; }
-    .cat-card .muted { font-size: 0.75rem; opacity: 0.6; }
+    .cat-card .icon {
+      font-size: 36px;
+      color: var(--green);
+      margin-bottom: 6px;
+    }
+    .cat-card h4 {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .cat-card .muted {
+      font-size: 0.75rem;
+      opacity: 0.6;
+    }
 
-    /* products */
-    .products-grid { grid-template-columns: repeat(4, 1fr); }
+    /* products (drinks & food) */
+    .products-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
     .product-card {
       background: white;
       border-radius: var(--radius);
@@ -324,7 +395,7 @@
       transition: var(--transition);
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(26,22,20,0.02);
+      border: 1px solid rgba(0, 98, 65, 0.04);
     }
     .product-card:hover {
       transform: translateY(-8px);
@@ -332,7 +403,7 @@
     }
     .product-img {
       height: 200px;
-      background: #f0ebe7;
+      background: #ede7e1;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -349,7 +420,7 @@
       top: 14px;
       left: 14px;
       background: var(--accent);
-      color: #1a1614;
+      color: #1e1a16;
       font-weight: 700;
       font-size: 11px;
       padding: 6px 14px;
@@ -357,8 +428,15 @@
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-    .product-body { padding: 18px 18px 10px; flex: 1; }
-    .product-body h5 { font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+    .product-body {
+      padding: 18px 18px 10px;
+      flex: 1;
+    }
+    .product-body h5 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
     .product-category {
       font-size: 0.8rem;
       color: var(--muted);
@@ -371,8 +449,15 @@
       gap: 12px;
       flex-wrap: wrap;
     }
-    .price-current { font-weight: 700; font-size: 1.1rem; }
-    .price-old { color: var(--muted); text-decoration: line-through; font-size: 0.9rem; }
+    .price-current {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .price-old {
+      color: var(--muted);
+      text-decoration: line-through;
+      font-size: 0.9rem;
+    }
     .rating {
       display: flex;
       align-items: center;
@@ -380,16 +465,19 @@
       color: #f5b342;
       font-size: 0.9rem;
     }
-    .rating span { color: var(--muted); font-size: 0.8rem; }
+    .rating span {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
     .product-footer {
       display: flex;
       gap: 8px;
       padding: 12px 18px 18px;
-      border-top: 1px solid rgba(26,22,20,0.03);
+      border-top: 1px solid rgba(0, 98, 65, 0.04);
     }
     .add-btn {
       flex: 1;
-      background: var(--primary);
+      background: var(--green);
       color: white;
       border: 0;
       padding: 12px;
@@ -402,18 +490,24 @@
       justify-content: center;
       gap: 8px;
     }
-    .add-btn:hover { background: var(--accent-dark); transform: scale(0.98); }
+    .add-btn:hover {
+      background: var(--green-dark);
+      transform: scale(0.98);
+    }
     .wish-btn {
       background: transparent;
-      border: 1px solid rgba(26,22,20,0.06);
+      border: 1px solid rgba(0, 98, 65, 0.06);
       padding: 12px 16px;
       border-radius: 60px;
       cursor: pointer;
       transition: var(--transition);
     }
-    .wish-btn:hover { background: var(--accent-light); border-color: var(--accent); }
+    .wish-btn:hover {
+      background: var(--green-light);
+      border-color: var(--green);
+    }
 
-    /* deal */
+    /* deal (featured) */
     .deal-card {
       display: flex;
       background: white;
@@ -445,6 +539,7 @@
     .deal-body h3 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
+      color: var(--green);
     }
     .deal-timer {
       display: flex;
@@ -459,15 +554,25 @@
       min-width: 72px;
       text-align: center;
     }
-    .time-box div:first-child { font-weight: 700; font-size: 1.5rem; }
-    .time-box div:last-child { font-size: 0.7rem; opacity: 0.6; }
+    .time-box div:first-child {
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+    .time-box div:last-child {
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
     .deal-price {
       display: flex;
       align-items: center;
       gap: 18px;
       margin: 8px 0 14px;
     }
-    .deal-price .price { font-size: 2rem; font-weight: 700; }
+    .deal-price .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green);
+    }
     .deal-discount {
       background: #ff4757;
       color: white;
@@ -492,10 +597,16 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow-sm);
       scroll-snap-align: start;
-      border: 1px solid rgba(26,22,20,0.02);
+      border: 1px solid rgba(0, 98, 65, 0.04);
     }
-    .testimonial-card .rating { color: #f5b342; margin-bottom: 8px; }
-    .testimonial-card p { font-size: 0.95rem; color: #2d2622; }
+    .testimonial-card .rating {
+      color: #f5b342;
+      margin-bottom: 8px;
+    }
+    .testimonial-card p {
+      font-size: 0.95rem;
+      color: #2d2622;
+    }
     .testimonial-author {
       display: flex;
       align-items: center;
@@ -515,7 +626,7 @@
 
     /* newsletter */
     .newsletter-box {
-      background: var(--primary);
+      background: var(--green);
       color: white;
       border-radius: var(--radius);
       padding: 48px 32px;
@@ -525,7 +636,10 @@
       font-family: 'Space Grotesk', sans-serif;
       font-size: 2rem;
     }
-    .newsletter-box p { opacity: 0.7; margin: 8px 0 24px; }
+    .newsletter-box p {
+      opacity: 0.8;
+      margin: 8px 0 24px;
+    }
     .newsletter-form {
       display: flex;
       justify-content: center;
@@ -538,25 +652,36 @@
       border: 0;
       width: 340px;
       max-width: 100%;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.08);
       color: white;
       outline: none;
       font-size: 1rem;
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
     }
-    .newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
-    .newsletter-form input:focus { background: rgba(255,255,255,0.12); }
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .newsletter-form input:focus {
+      background: rgba(255, 255, 255, 0.14);
+    }
     .newsletter-form .btn {
       background: var(--accent);
-      color: #1a1614;
+      color: #1e1a16;
     }
-    .newsletter-form .btn:hover { background: white; color: var(--primary); }
-    #newsletterMsg { margin-top: 16px; font-size: 0.95rem; color: #a3d8c0; }
+    .newsletter-form .btn:hover {
+      background: white;
+      color: var(--green);
+    }
+    #newsletterMsg {
+      margin-top: 16px;
+      font-size: 0.95rem;
+      color: #c8e6d9;
+    }
 
     /* footer */
     footer {
       padding: 48px 0 24px;
-      border-top: 1px solid rgba(26,22,20,0.04);
+      border-top: 1px solid rgba(0, 98, 65, 0.06);
       margin-top: 24px;
     }
     .footer-grid {
@@ -565,7 +690,11 @@
       gap: 40px;
       justify-content: space-between;
     }
-    .footer-brand p { color: var(--muted); max-width: 280px; margin-top: 6px; }
+    .footer-brand p {
+      color: var(--muted);
+      max-width: 280px;
+      margin-top: 6px;
+    }
     .footer-social {
       display: flex;
       gap: 12px;
@@ -582,49 +711,98 @@
       color: var(--primary);
       transition: var(--transition);
     }
-    .footer-social a:hover { background: var(--accent-light); color: var(--accent-dark); }
+    .footer-social a:hover {
+      background: var(--green-light);
+      color: var(--green-dark);
+    }
     .footer-links {
       display: flex;
       gap: 56px;
       flex-wrap: wrap;
     }
-    .footer-links h5 { font-weight: 600; margin-bottom: 8px; }
-    .footer-links div { color: var(--muted); line-height: 2; font-size: 0.95rem; }
+    .footer-links h5 {
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--green);
+    }
+    .footer-links div {
+      color: var(--muted);
+      line-height: 2;
+      font-size: 0.95rem;
+    }
     .footer-copy {
       text-align: center;
       color: var(--muted);
       font-size: 0.85rem;
       margin-top: 36px;
-      border-top: 1px solid rgba(26,22,20,0.04);
+      border-top: 1px solid rgba(0, 98, 65, 0.04);
       padding-top: 24px;
     }
 
     /* ----- responsive ----- */
     @media (max-width: 1200px) {
-      .categories-grid { grid-template-columns: repeat(3, 1fr); }
-      .products-grid { grid-template-columns: repeat(3, 1fr); }
+      .categories-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
     @media (max-width: 992px) {
-      .main-nav { display: none; }
-      .mobile-toggle { display: inline-block; }
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
-      .categories-grid { grid-template-columns: repeat(2, 1fr); }
-      .deal-card { flex-direction: column; }
-      .deal-img { width: 100%; height: 220px; }
+      .main-nav {
+        display: none;
+      }
+      .mobile-toggle {
+        display: inline-block;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .deal-card {
+        flex-direction: column;
+      }
+      .deal-img {
+        width: 100%;
+        height: 220px;
+      }
     }
     @media (max-width: 600px) {
-      .hero { padding: 48px 20px; }
-      .products-grid { grid-template-columns: 1fr; }
-      .categories-grid { grid-template-columns: 1fr; }
-      .deal-body { padding: 24px; }
-      .search-wrap { min-width: 140px; }
-      .header-inner { gap: 10px; }
-      .footer-grid { flex-direction: column; gap: 24px; }
-      .section-header h2 { font-size: 1.5rem; }
+      .hero {
+        padding: 48px 20px;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+      .deal-body {
+        padding: 24px;
+      }
+      .search-wrap {
+        min-width: 140px;
+      }
+      .header-inner {
+        gap: 10px;
+      }
+      .footer-grid {
+        flex-direction: column;
+        gap: 24px;
+      }
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
     }
 
-    .muted { color: var(--muted); }
-    .text-center { text-align: center; }
+    .muted {
+      color: var(--muted);
+    }
+    .text-center {
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -633,21 +811,21 @@
   <div class="container header-inner">
     <div style="display:flex;align-items:center;gap:14px;">
       <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
-      <a href="#" class="brand"><i class="fas fa-store-alt"></i><span>VibeMart</span></a>
+      <a href="#" class="brand"><i class="fas fa-mug-hot"></i><span>Starbucks</span></a>
     </div>
 
     <nav class="main-nav" id="mainNav">
       <ul>
         <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="#categories"><i class="fas fa-th-large"></i> Categories</a></li>
-        <li><a href="#products"><i class="fas fa-fire"></i> Trending</a></li>
-        <li><a href="#deals"><i class="fas fa-tag"></i> Deals</a></li>
+        <li><a href="#categories"><i class="fas fa-th-large"></i> Menu</a></li>
+        <li><a href="#products"><i class="fas fa-fire"></i> Popular</a></li>
+        <li><a href="#deals"><i class="fas fa-tag"></i> Offers</a></li>
       </ul>
     </nav>
 
     <div style="display:flex;align-items:center;gap:12px;">
       <div class="search-wrap">
-        <input type="search" id="searchInput" placeholder="Search ..." aria-label="Search">
+        <input type="search" id="searchInput" placeholder="Search drinks..." aria-label="Search" />
         <button id="searchBtn" aria-label="Search"><i class="fas fa-arrow-right"></i></button>
       </div>
       <div class="header-actions">
@@ -665,58 +843,58 @@
     <div class="container">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#categories">Categories</a></li>
-        <li><a href="#products">Trending</a></li>
-        <li><a href="#deals">Deals</a></li>
+        <li><a href="#categories">Menu</a></li>
+        <li><a href="#products">Popular</a></li>
+        <li><a href="#deals">Offers</a></li>
       </ul>
     </div>
   </div>
 </header>
 
 <main>
-  <!-- hero -->
+  <!-- Hero -->
   <section class="hero">
     <div class="container hero-content">
-      <h1>New <i>winter</i> collection</h1>
-      <p>Bold styles, smart tech, and everyday staples — curated for the modern soul.</p>
+      <h1>Good <i>vibes</i> & great coffee</h1>
+      <p>Explore handcrafted beverages, fresh food, and seasonal favorites — made just for you.</p>
       <div class="btn-group">
-        <button class="btn btn-primary" id="shopNow">Shop now <i class="fas fa-arrow-right"></i></button>
-        <button class="btn btn-ghost" id="exploreDeals">Explore deals</button>
+        <button class="btn btn-primary" id="shopNow">Order now <i class="fas fa-arrow-right"></i></button>
+        <button class="btn btn-ghost" id="exploreDeals">Explore offers</button>
       </div>
     </div>
   </section>
 
-  <!-- categories -->
+  <!-- Categories (Menu) -->
   <section class="section container" id="categories">
     <div class="section-header">
-      <h2>Categories</h2>
-      <span class="muted">Explore by interest</span>
+      <h2>Menu</h2>
+      <span class="muted">Find your favorite</span>
     </div>
     <div class="grid categories-grid" id="categoriesGrid"></div>
   </section>
 
-  <!-- products -->
+  <!-- Products (Popular) -->
   <section class="section container" id="products">
     <div class="section-header">
-      <h2>Trending now</h2>
-      <span class="muted">Popular picks</span>
+      <h2>Popular now</h2>
+      <span class="muted">Trending picks</span>
     </div>
     <div class="grid products-grid" id="productsGrid"></div>
   </section>
 
-  <!-- deal -->
+  <!-- Deal -->
   <section class="section container" id="deals">
     <div class="section-header">
-      <h2>Flash sale</h2>
-      <span class="muted">Limited time</span>
+      <h2>Limited offer</h2>
+      <span class="muted">Don't miss out</span>
     </div>
     <div class="deal-card">
       <div class="deal-img">
-        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="MacBook Air M2">
+        <img src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=800&q=80" alt="Pumpkin Spice Latte" />
       </div>
       <div class="deal-body">
-        <h3>MacBook Air M2</h3>
-        <p class="muted">Thin, light, and ridiculously powerful.</p>
+        <h3>Pumpkin Spice Latte</h3>
+        <p class="muted">Fall favorite with a warm spice blend.</p>
         <div class="deal-timer" id="dealTimer">
           <div class="time-box"><div id="dealDays">0</div><div>Days</div></div>
           <div class="time-box"><div id="dealHours">00</div><div>Hrs</div></div>
@@ -724,57 +902,57 @@
           <div class="time-box"><div id="dealSeconds">00</div><div>Sec</div></div>
         </div>
         <div class="deal-price">
-          <span class="price">$999</span>
-          <span class="price-old">$1,199</span>
-          <span class="deal-discount">-17%</span>
+          <span class="price">$5.50</span>
+          <span class="price-old">$7.25</span>
+          <span class="deal-discount">-24%</span>
         </div>
-        <p style="margin:6px 0 14px;"><strong>12</strong> left at this price</p>
-        <button class="btn btn-primary" id="buyDeal" style="align-self:flex-start;"><i class="fas fa-bolt"></i> Buy now</button>
+        <p style="margin:6px 0 14px;"><strong>8</strong> left at this price</p>
+        <button class="btn btn-primary" id="buyDeal" style="align-self:flex-start;"><i class="fas fa-bolt"></i> Grab it</button>
       </div>
     </div>
   </section>
 
-  <!-- testimonials -->
+  <!-- Testimonials -->
   <section class="section container">
     <div class="section-header">
-      <h2>Real voices</h2>
-      <span class="muted">From our community</span>
+      <h2>What our fans say</h2>
+      <span class="muted">Real reviews</span>
     </div>
     <div class="testimonials-scroll" id="testimonials">
       <div class="testimonial-card">
         <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>“Absolutely love the curation. Every piece feels intentional.”</p>
+        <p>“The best caramel macchiato I've ever had. Perfect every time.”</p>
         <div class="testimonial-author">
           <div class="avatar"><i class="fas fa-user"></i></div>
-          <div><strong>Ava Martin</strong><div class="muted" style="font-size:0.8rem;">Verified</div></div>
+          <div><strong>Sophia Chen</strong><div class="muted" style="font-size:0.8rem;">Verified</div></div>
         </div>
       </div>
       <div class="testimonial-card">
         <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-        <p>“Super fast shipping and the quality is top-tier.”</p>
+        <p>“Cozy atmosphere and friendly staff. My go‑to study spot.”</p>
         <div class="testimonial-author">
           <div class="avatar"><i class="fas fa-user"></i></div>
-          <div><strong>Michael Lee</strong><div class="muted" style="font-size:0.8rem;">Frequent buyer</div></div>
+          <div><strong>James Park</strong><div class="muted" style="font-size:0.8rem;">Regular</div></div>
         </div>
       </div>
       <div class="testimonial-card">
         <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-        <p>“My new go-to store for unique finds. 10/10.”</p>
+        <p>“Love the seasonal drinks and the rewards program.”</p>
         <div class="testimonial-author">
           <div class="avatar"><i class="fas fa-user"></i></div>
-          <div><strong>Elena Park</strong><div class="muted" style="font-size:0.8rem;">Designer</div></div>
+          <div><strong>Maya Rodriguez</strong><div class="muted" style="font-size:0.8rem;">Gold member</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- newsletter -->
+  <!-- Newsletter -->
   <section class="section container">
     <div class="newsletter-box">
-      <h3>Stay in the loop</h3>
-      <p>Get early access to drops & exclusive offers</p>
+      <h3>Stay caffeinated</h3>
+      <p>Get exclusive offers & early access to new drops</p>
       <form class="newsletter-form" id="newsletterForm" onsubmit="return false;">
-        <input type="email" id="newsletterEmail" placeholder="Your email" required>
+        <input type="email" id="newsletterEmail" placeholder="Your email" required />
         <button class="btn" id="subscribeBtn">Subscribe</button>
       </form>
       <div id="newsletterMsg"></div>
@@ -785,8 +963,8 @@
 <footer>
   <div class="container footer-grid">
     <div class="footer-brand">
-      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;"><i class="fas fa-store-alt" style="color:var(--accent);"></i> VibeMart</div>
-      <p>Modern e‑commerce with soul. Built for discovery.</p>
+      <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;color:var(--green);"><i class="fas fa-mug-hot" style="color:var(--green);"></i> Starbucks</div>
+      <p>Premium coffee, handcrafted with care.</p>
       <div class="footer-social">
         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -798,29 +976,29 @@
       <div><h5>Support</h5><div>Help<br>Returns<br>Contact</div></div>
     </div>
   </div>
-  <div class="footer-copy">© <span id="year"></span> VibeMart · all rights reserved</div>
+  <div class="footer-copy">© <span id="year"></span> Starbucks · all rights reserved</div>
 </footer>
 
 <script>
-  // ----- data -----
+  // ----- data (Starbucks inspired) -----
   const CATEGORIES = [
-    { id: 'phones', name: 'Smartphones', icon: 'fa-mobile-alt' },
-    { id: 'laptops', name: 'Laptops', icon: 'fa-laptop' },
-    { id: 'clothing', name: 'Clothing', icon: 'fa-tshirt' },
-    { id: 'gadgets', name: 'Gadgets', icon: 'fa-headphones' },
-    { id: 'footwear', name: 'Footwear', icon: 'fa-shoe-prints' },
-    { id: 'accessories', name: 'Accessories', icon: 'fa-watch' }
+    { id: 'hot', name: 'Hot Coffees', icon: 'fa-mug-hot' },
+    { id: 'cold', name: 'Cold Brews', icon: 'fa-ice-cream' },
+    { id: 'frapp', name: 'Frappuccino', icon: 'fa-blender' },
+    { id: 'tea', name: 'Teas', icon: 'fa-leaf' },
+    { id: 'food', name: 'Food', icon: 'fa-utensils' },
+    { id: 'merch', name: 'Merch', icon: 'fa-tshirt' }
   ];
 
   const PRODUCTS = [
-    { id:1, title:'iPhone 14 Pro Max', price:1099, oldPrice:1199, rating:5, reviews:128, badge:'New', img:'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=600&q=80', category:'phones' },
-    { id:2, title:'MacBook Pro 14"', price:1999, rating:4, reviews:86, img:'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=600&q=80', category:'laptops' },
-    { id:3, title:'Apple Watch S8', price:349, oldPrice:399, rating:5, reviews:214, badge:'-25%', img:'https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-    { id:4, title:'Nike Air Max 270', price:150, rating:4, reviews:53, img:'https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80', category:'footwear' },
-    { id:5, title:'Sony A7 IV', price:2499, rating:5, reviews:42, img:'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80', category:'gadgets' },
-    { id:6, title:'Chanel No.5', price:120, rating:5, reviews:189, img:'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-    { id:7, title:'Travel Backpack', price:79, oldPrice:99, rating:4, reviews:67, img:'https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=600&q=80', category:'accessories' },
-    { id:8, title:'Sony WH-1000XM5', price:399, rating:5, reviews:156, img:'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80', category:'gadgets' }
+    { id:1, title:'Caramel Macchiato', price:5.25, oldPrice:6.00, rating:5, reviews:142, badge:'Popular', img:'https://images.unsplash.com/photo-1570968915860-54d5c92c9b5b?auto=format&fit=crop&w=600&q=80', category:'hot' },
+    { id:2, title:'Iced Shaken Espresso', price:4.75, rating:4, reviews:98, img:'https://images.unsplash.com/photo-1517701604599-bb29b880090f?auto=format&fit=crop&w=600&q=80', category:'cold' },
+    { id:3, title:'Pumpkin Spice Latte', price:5.50, oldPrice:7.25, rating:5, reviews:215, badge:'Seasonal', img:'https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=600&q=80', category:'hot' },
+    { id:4, title:'Mocha Frappuccino', price:5.95, rating:4, reviews:76, img:'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=600&q=80', category:'frapp' },
+    { id:5, title:'Matcha Tea Latte', price:4.50, rating:5, reviews:63, img:'https://images.unsplash.com/photo-1558857563-c0c3b2d23b4b?auto=format&fit=crop&w=600&q=80', category:'tea' },
+    { id:6, title:'Butter Croissant', price:3.25, rating:4, reviews:44, img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=600&q=80', category:'food' },
+    { id:7, title:'Cold Brew with Milk', price:4.25, rating:4, reviews:89, img:'https://images.unsplash.com/photo-1558211583-26f610c1f07b?auto=format&fit=crop&w=600&q=80', category:'cold' },
+    { id:8, title:'White Chocolate Mocha', price:5.75, rating:5, reviews:121, img:'https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=600&q=80', category:'hot' }
   ];
 
   // ----- refs -----
@@ -856,7 +1034,6 @@
     list.forEach(p => {
       const el = document.createElement('article');
       el.className = 'product-card';
-      const stars = '★'.repeat(Math.round(p.rating)) + '☆'.repeat(5 - Math.round(p.rating));
       el.innerHTML = `
         <div class="product-img">
           <img src="${p.img}" alt="${p.title}" loading="lazy">
@@ -866,8 +1043,8 @@
           <h5>${p.title}</h5>
           <div class="product-category">${p.category}</div>
           <div class="price-row">
-            <span class="price-current">$${p.price.toLocaleString()}</span>
-            ${p.oldPrice ? `<span class="price-old">$${p.oldPrice.toLocaleString()}</span>` : ''}
+            <span class="price-current">$${p.price.toFixed(2)}</span>
+            ${p.oldPrice ? `<span class="price-old">$${p.oldPrice.toFixed(2)}</span>` : ''}
             <span class="rating"><i class="fas fa-star" style="color:#f5b342;"></i> ${p.rating} <span>(${p.reviews})</span></span>
           </div>
         </div>
@@ -879,7 +1056,7 @@
       productsGrid.appendChild(el);
     });
     document.querySelectorAll('.add-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
+      btn.addEventListener('click', () => {
         const id = Number(btn.dataset.id);
         addToCart(id);
       });
@@ -930,7 +1107,7 @@
       return;
     }
     msg.textContent = 'Thanks! You\'re on the list.';
-    msg.style.color = '#a3d8c0';
+    msg.style.color = '#c8e6d9';
     msg.style.display = 'block';
     document.getElementById('newsletterEmail').value = '';
     setTimeout(() => msg.style.display = 'none', 3000);
@@ -965,7 +1142,7 @@
   document.getElementById('buyDeal').addEventListener('click', () => {
     cartCount++;
     cartCountEl.textContent = cartCount;
-    alert('Added MacBook Air M2 to cart (demo).');
+    alert('Added Pumpkin Spice Latte to cart (demo).');
   });
 
   // ----- init -----
