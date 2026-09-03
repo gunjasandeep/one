@@ -856,7 +856,7 @@
   <section class="hero">
     <div class="container hero-content">
       <h1>Good <i>vibes</i> & great coffee</h1>
-      <p>Explore handcrafted beverages, fresh food, healthy drinks and seasonal favorites — made just for you.</p>
+      <p>Explore handcrafted beverages, funny memes, fresh food, healthy drinks and seasonal favorites — made just for you.</p>
       <div class="btn-group">
         <button class="btn btn-primary" id="shopNow">Order now <i class="fas fa-arrow-right"></i></button>
         <button class="btn btn-ghost" id="exploreDeals">Explore offers</button>
